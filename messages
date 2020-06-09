@@ -1,0 +1,31 @@
+SENSOR STATE
+
+- left_pwm - voltagem do motor esquerdo [-100, +100]
+- right_pwm - voltagem do motor direito [-100, +100]
+- battery - in 0.1V, ex: 16.1V = 161
+- current - corrente para os motores in 10mA, ex. 12 = 120mA
+
+# Kobuki Sensor Data Messages
+#
+# For more direct simple interactions (buttons, leds, gyro, motor velocity
+# etc) use the other topics. This provides detailed information about the
+# entire state package that is transmitted at 50Hz from the robot.
+#
+
+POWER SYSTEM:
+
+uint8 UNPLUGGED           = 0
+uint8 PLUGGED_TO_ADAPTER  = 1
+uint8 PLUGGED_TO_DOCKBASE = 2
+uint8 CHARGE_COMPLETED    = 3
+uint8 BATTERY_LOW         = 4
+uint8 BATTERY_CRITICAL    = 5
+
+uint8 event
+
+ROBOT STATE EVENT:
+
+uint8 ONLINE  = 1
+uint8 OFFLINE = 0
+
+uint8 state
